@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Calculator</title>
+</head>
+<body>
+
+    <div class="container">
+        <div id="calculator">
+            <div id="light">
+                <button>
+                    <img src="/images/Light=Off.png" alt="Button Image">
+                </button>
+                <button>
+                    <img src="/images/Light=On.png" alt="Button Image">
+                </button>
+            </div>
+            <input id="view" readonly>
+            <div id="display"></div>
+            <div id="type-buttons">
+                <div id="first-column">
+                   <button onClick = "clearDisplay()" class="grey">C</button>
+                   <button onClick = "appendToDisplay('7')">7</button>
+                   <button onClick = "appendToDisplay('4')">4</button>
+                   <button onClick = "appendToDisplay('1')">1</button>
+                   <button onClick = "appendToDisplay('.')">.</button>
+                </div>
+                <div id="second-column">
+                    <div id="brackets">
+                        <button onClick = "appendToDisplay('(')">(</button>
+                        <button onClick = "appendToDisplay(')')">)</button>
+                    </div>
+                    <button onClick = "appendToDisplay('8')">8</button>
+                    <button onClick = "appendToDisplay('5')">5</button>
+                    <button onClick = "appendToDisplay('2')">2</button>
+                    <button onClick = "appendToDisplay('0')">0</button>
+                 </div>
+                 <div id="third-column">
+                    <button onClick = "appendToDisplay('/100')"  class="grey">%</button>
+                    <button onClick = "appendToDisplay('9')">9</button>
+                    <button onClick = "appendToDisplay('6')">6</button>
+                    <button onClick = "appendToDisplay('3')">3</button>
+                    <button onclick="del()">
+                        <img src="/images/👀 Icon.svg" alt="Button Image">
+                    </button>
+                 </div>
+                 <div id="fourth-column">
+                    <button onClick = "appendToDisplay('/')">÷</button>
+                    <button onClick = "appendToDisplay('*')">x</button>
+                    <button onClick = "appendToDisplay('-')">-</button>
+                    <button onClick = "appendToDisplay('+')">+</button>
+                    <button onClick = "calculate()">=</button>
+                 </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script> 
+</body>
+</html>
