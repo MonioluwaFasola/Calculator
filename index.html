@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <title>Calculator</title>
 </head>
-<body>
-
+<body class="background">
+    <div class="toogle-section">
+        <input type = "checkbox" id="darkmode-toggle" class="input-toogle" oninput="myFunction()">
+        <label for="darkmode-toggle" class="label-elements">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11 0V1V3V4H9V3V1V0H11ZM0 9H1H3H4V11H3H1H0V9ZM17 9H16V11H17H19H20V9H19H17ZM11 16V17V19V20H9V19V17V16H11ZM15.6568 17.0711L16.364 17.7782L17.7782 16.364L17.0711 15.6569L15.6568 14.2427L14.9497 13.5356L13.5355 14.9498L14.2426 15.6569L15.6568 17.0711ZM5.05023 6.46451L4.34312 5.7574L2.92891 4.34319L2.2218 3.63608L3.63602 2.22187L4.34313 2.92897L5.75734 4.34319L6.46445 5.05029L5.05023 6.46451ZM17.0711 4.34309L17.7782 3.63599L16.364 2.22177L15.6568 2.92888L14.2426 4.34309L13.5355 5.0502L14.9497 6.46441L15.6568 5.75731L17.0711 4.34309ZM6.46445 14.9497L5.75734 15.6568L4.34312 17.071L3.63602 17.7781L2.2218 16.3639L2.92891 15.6568L4.34313 14.2426L5.05023 13.5355L6.46445 14.9497ZM8 10C8 8.89543 8.89543 8 10 8C11.1046 8 12 8.89543 12 10C12 11.1046 11.1046 12 10 12C8.89543 12 8 11.1046 8 10ZM10 6C7.79086 6 6 7.79086 6 10C6 12.2091 7.79086 14 10 14C12.2091 14 14 12.2091 14 10C14 7.79086 12.2091 6 10 6Z" fill="#4B5EFC"/>
+                </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.7">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.03239 6.23198C6.2001 7.49487 5 9.60809 5 12C5 15.866 8.13401 19 12 19C14.3918 19 16.5049 17.8001 17.7679 15.968C17.5146 15.9894 17.2585 16.0003 17 16.0003C12.0294 16.0003 8 11.9709 8 7.00031C8 6.74163 8.01094 6.48536 8.03239 6.23198ZM3 12C3 8.04185 5.55459 4.68291 9.10211 3.47705L10.3707 4.74573C10.1306 5.45189 10 6.20981 10 7.00031C10 10.8663 13.134 14.0003 17 14.0003C17.7904 14.0003 18.5482 13.8697 19.2542 13.6297L20.5228 14.8984C19.3168 18.4457 15.958 21 12 21C7.02944 21 3 16.9706 3 12Z" fill="#4B5EFC"/>
+                </g>
+                </svg>
+        </label>
+    </div>
+    
     <div class="container">
         <div id="calculator">
-            <div id="light">
-                <button>
-                    <img src="/images/Light=Off.png" alt="Button Image">
-                </button>
-                <button>
-                    <img src="/images/Light=On.png" alt="Button Image">
-                </button>
+            <div class="view-display">
+                 <input id="view" readonly>
+                 <div id="display"></div>
             </div>
-            <input id="view" readonly>
-            <div id="display"></div>
+           
             <div id="type-buttons">
                 <div id="first-column">
                    <button onClick = "clearDisplay()" class="grey">C</button>
@@ -31,8 +42,8 @@
                 </div>
                 <div id="second-column">
                     <div id="brackets">
-                        <button onClick = "appendToDisplay('(')">(</button>
-                        <button onClick = "appendToDisplay(')')">)</button>
+                        <button onClick = "appendToDisplay('(')" class="grey">(</button>
+                        <button onClick = "appendToDisplay(')')" class="grey">)</button>
                     </div>
                     <button onClick = "appendToDisplay('8')">8</button>
                     <button onClick = "appendToDisplay('5')">5</button>
